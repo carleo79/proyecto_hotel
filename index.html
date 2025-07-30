@@ -1,18 +1,116 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Proyecto</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vista del Sol</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>¡Hola Mundo!</h1>
-    <p>Este es mi primer proyecto con Git y GitHub</p>
-    <!-- Verificación: Este archivo está en GitHub -->
-     <p>Parrafo de  Pruebas </p>
-     <h1>pruebas</h1>
-     <ul>
-     <li>pruebas</li>
-    </ul>
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#sobre">Sobre Nosotros</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#habitaciones">Habitaciones</a></li>
+          <li><a href="#eventos">Eventos</a></li>
+          <li><a href="#contacto">Contáctenos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section id="inicio" class="hero">
+    <img src="logo.png" alt="Vista del Sol" class="hero-logo">
+    <video class="hero-video" src="encabezadoplaya.mp4" autoplay loop muted playsinline></video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h2>Vive Cartagena con Estilo</h2>
+      <p>Disfruta de lujo, confort y una vista inolvidable al mar.</p>
+      <a href="#contacto" class="btn">Reserva ahora</a>
+    </div>
+  </section>
+
+  <section id="sobre" class="sobre">
+    <div class="container">
+      <h2>Sobre Nosotros</h2>
+      <p>En Vista del Sol, combinamos elegancia y calidez para ofrecerte una experiencia inolvidable. Ubicados en el corazón de Cartagena, somos el destino ideal para viajeros que buscan lujo y comodidad.</p>
+    </div>
+  </section>
+
+  <section id="galeria" class="galeria">
+    <div class="container">
+      <h2>Galería</h2>
+      <div class="imagenes">
+        <img src="zonascomunes.jpg" alt="Elegancia">
+        <img src="suit1.jpg" alt="Habitaciones de lujo">
+        <img src="suit2.jpg" alt="Confort">
+        <img src="suit3.jpg" alt="Vacaciones innolvidables">
+        <img src="suitdoble.jpg" alt="Perfecto para la familia">
+        <img src="piscinahotel.jpg" alt="Vista del Sol">
+        <img src="piscinahotelinterior.jpg" alt="Frescura">
+        <img src="comedor.jpg" alt="Frescura">
+        <img src="recepcion.jpeg" alt="Frescura">
+        <img src="relax.jpg" alt="Frescura">
+      </div>
+    </div>
+  </section>
+
+  <section id="habitaciones" class="habitaciones">
+    <div class="container">
+      <h2>Habitaciones</h2>
+      <p>Nuestras habitaciones están diseñadas para el descanso total, con vistas al mar, aire acondicionado, minibar y decoración moderna.</p>
+      <div class="imagenes">
+        <img src="suit1.jpg" alt="Habitación estándar">
+        <img src="suit2.jpg" alt="Hermosa vista">
+        <img src="suit3.jpg" alt="Para descansar">
+        <img src="suitdoble.jpg" alt="Para descansar">
+        <img src="suit5.jpg" alt="Para descansar">
+      </div>
+    </div>
+  </section>
+
+  <section id="eventos" class="eventos">
+    <div class="container">
+      <h2>Eventos</h2>
+      <p>Organiza tus reuniones, bodas o celebraciones en nuestros elegantes salones, con capacidad hasta 300 personas y todo el equipo necesario.</p>
+      <div class="imagenes">
+        <img src="matrimonio.jpeg" alt="Boda">
+        <img src="matrominio1.jpeg" alt="Evento empresarial">
+        <img src="matrimonio2.jpeg" alt="Evento empresarial">
+        <img src="evento.jpg" alt="Evento empresarial">
+        <img src="matrimonio3.png" alt="Evento empresarial">
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="contacto">
+    <div class="container">
+      <h2>Contáctenos</h2>
+      <form>
+        <input type="text" placeholder="Tu nombre" required>
+        <input type="email" placeholder="Tu correo" required>
+        <textarea placeholder="Tu mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Hotel Mar del Sol. Todos los derechos reservados.</p>
+      <div class="redes">
+        <a href="#">Facebook</a> |
+        <a href="#">Instagram</a> |
+        <a href="#">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
+
