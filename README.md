@@ -1,4 +1,8 @@
-# Proyecto Final
+# Proyecto Hotel - Landing Page
+
+Landing Page Hotel Proyecto
+
+## Descripción
 
 Descripción de tu proyecto aquí.
 
@@ -16,4 +20,4 @@ Cómo contribuir al proyecto.
 
 ## Licencia
 
-Información sobre la licencia. 
+Información sobre la licencia.
