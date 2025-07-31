@@ -35,10 +35,11 @@ proyecto_final/
 
 1. **Hero Section**: Video de fondo con overlay
 2. **Sobre Nosotros**: Información del hotel
-3. **Galería**: Carrusel de imágenes de servicios
-4. **Habitaciones**: Catálogo de habitaciones
-5. **Eventos**: Espacios para eventos
-6. **Reservaciones**: Formulario de reservas
+3. **Servicios**: Cards con servicios agrupados
+4. **Galería**: Carrusel de imágenes de servicios
+5. **Habitaciones**: Catálogo de habitaciones
+6. **Eventos**: Espacios para eventos
+7. **Reservaciones**: Formulario de reservas
 
 ## 🎯 Funcionalidades Principales
 
