@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vista del Sol - Hotel Boutique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="header-left">
+          <div class="logo-container">
+            <img src="images/logo.png" alt="Vista del Sol" class="header-logo">
+          </div>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre">Sobre Nosotros</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#habitaciones">Habitaciones</a></li>
+            <li><a href="#eventos">Eventos</a></li>
+            <li><a href="reservaciones2/index.php">Reservaciones 2</a></li>
+          </ul>
+        </nav>
+        <div class="social-media">
+          <a href="https://instagram.com/vistadelsol" target="_blank" class="social-link instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+          <a href="https://facebook.com/vistadelsol" target="_blank" class="social-link facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a href="https://wa.me/573001234567" target="_blank" class="social-link whatsapp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="inicio" class="hero">
+    <video class="hero-video" src="videos/encabezadoplaya.mp4" autoplay loop muted playsinline></video>
+    <div class="hero-overlay"></div>
+  </section>
+
+  <section id="sobre" class="sobre">
+    <div class="container">
+      <div class="about-header">
+        <h2>Sobre Nosotros</h2>
+        <p class="about-subtitle">Donde el lujo se encuentra con la calidez caribeña</p>
+      </div>
+      
+      <div class="about-main">
+        <div class="about-text-content">
+          <h3>Bienvenidos a Vista del Sol</h3>
+          <p class="about-description">
+            En Vista del Sol, combinamos elegancia y calidez para ofrecerte una experiencia inolvidable. 
+            Ubicados en el corazón de Cartagena, somos el destino ideal para viajeros que buscan lujo, 
+            comodidad y autenticidad en cada detalle.
+          </p>
+        </div>
+        
+        <div class="about-visual">
+          <div class="about-image">
+            <img src="images/recepcion.jpeg" alt="Vista del Sol - Recepción" class="about-main-image">
+            <div class="about-image-overlay">
+              <div class="overlay-content">
+                <h4>Tu Hogar en Cartagena</h4>
+                <p>Donde cada momento se convierte en un recuerdo inolvidable</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="about-highlights">
+        <div class="highlight-item">
+          <div class="highlight-icon">🏖️</div>
+          <div class="highlight-text">
+            <h4>Ubicación Privilegiada</h4>
+            <p>A solo pasos de las mejores playas y el centro histórico</p>
+          </div>
+        </div>
+        
+        <div class="highlight-item">
+          <div class="highlight-icon">🌟</div>
+          <div class="highlight-text">
+            <h4>Servicio Personalizado</h4>
+            <p>Atención 24/7 con un equipo dedicado a tu comodidad</p>
+          </div>
+        </div>
+        
+        <div class="highlight-item">
+          <div class="highlight-icon">🏊‍♂️</div>
+          <div class="highlight-text">
+            <h4>Amenidades Premium</h4>
+            <p>Piscina con vista al mar, spa y restaurante gourmet</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="about-stats-section">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Años de Experiencia</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">5000+</div>
+            <div class="stat-label">Huéspedes Satisfechos</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">4.9</div>
+            <div class="stat-label">Calificación Promedio</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Habitaciones Elegantes</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="about-mission-section">
+        <div class="mission-header">
+          <h3>Nuestra Misión</h3>
+          <p>Crear experiencias excepcionales que superen las expectativas de nuestros huéspedes, 
+             ofreciendo un servicio personalizado en un ambiente de lujo y confort.</p>
+        </div>
+        
+        <div class="values-section">
+          <h4>Nuestros Valores</h4>
+          <div class="values-grid">
+            <div class="value-card">
+              <div class="value-icon">💎</div>
+              <h5>Excelencia</h5>
+              <p>Compromiso con la calidad en cada servicio</p>
+            </div>
+            <div class="value-card">
+              <div class="value-icon">🤝</div>
+              <h5>Hospitalidad</h5>
+              <p>Trato cálido y personalizado a cada huésped</p>
+            </div>
+            <div class="value-card">
+              <div class="value-icon">🌿</div>
+              <h5>Sostenibilidad</h5>
+              <p>Prácticas responsables con el medio ambiente</p>
+            </div>
+            <div class="value-card">
+              <div class="value-icon">🎨</div>
+              <h5>Autenticidad</h5>
+              <p>Experiencias genuinas de la cultura cartagenera</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios" class="servicios">
+    <div class="container">
+      <h2>Nuestros Servicios</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/>
+            </svg>
+          </div>
+          <h3>Bienestar & Fitness</h3>
+          <p>Mantén tu rutina de ejercicios en nuestro gimnasio completamente equipado, relájate en nuestro spa con tratamientos profesionales, y disfruta de un parqueadero seguro y gratuito para tu comodidad.</p>
+          <ul class="service-features">
+            <li>🏋️ Gimnasio 24/7</li>
+            <li>🧖 Spa & Masajes</li>
+            <li>🅿️ Parqueadero Gratuito</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+          </div>
+          <h3>Conectividad & Productividad</h3>
+          <p>Mantente conectado con WiFi de alta velocidad en todo el hotel, aprovecha nuestro espacio de coworking para trabajar con comodidad, y utiliza nuestro servicio de lavandería para mantener tu ropa impecable.</p>
+          <ul class="service-features">
+            <li>📶 WiFi de Alta Velocidad</li>
+            <li>💼 Espacio Coworking</li>
+            <li>👕 Servicio de Lavandería</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <h3>Entretenimiento & Relajación</h3>
+          <p>Disfruta de nuestro servicio de habitación las 24 horas, relájate en nuestra piscina con vista al mar, y socializa en nuestro bar con las mejores bebidas y ambiente acogedor.</p>
+          <ul class="service-features">
+            <li>🍽️ Room Service 24h</li>
+            <li>🏊 Piscina con Vista al Mar</li>
+            <li>🍹 Bar & Lounge</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria" class="galeria">
+    <div class="container">
+      <h2>Galería</h2>
+      <div class="carousel-container">
+        <div class="carousel-wrapper">
+          <div class="carousel-slide active">
+            <img src="images/zonascomunes.jpg" alt="Elegancia">
+            <div class="slide-caption">
+              <h3>Zonas Comunes</h3>
+              <p>Espacios elegantes para tu comodidad</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="images/suit1.jpg" alt="Habitaciones de lujo">
+            <div class="slide-caption">
+              <h3>Habitaciones de Lujo</h3>
+              <p>Confort y elegancia en cada detalle</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="images/suit2.jpg" alt="Confort">
+            <div class="slide-caption">
+              <h3>Máximo Confort</h3>
+              <p>Diseño moderno y funcional</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="images/suit3.jpg" alt="Vacaciones innolvidables">
+            <div class="slide-caption">
+              <h3>Vacaciones Inolvidables</h3>
+              <p>Experiencias únicas en Cartagena</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="images/suitdoble.jpg" alt="Perfecto para la familia">
+            <div class="slide-caption">
+              <h3>Perfecto para la Familia</h3>
+              <p>Espacios amplios y acogedores</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="images/piscinahotel.jpg" alt="Vista del Sol">
+            <div class="slide-caption">
+              <h3>Piscina con Vista al Mar</h3>
+              <p>Relájate con la mejor vista</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="images/piscinahotelinterior.jpg" alt="Frescura">
+            <div class="slide-caption">
+              <h3>Área de Piscina Interior</h3>
+              <p>Frescura y elegancia combinadas</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="images/comedor.jpg" alt="Frescura">
+            <div class="slide-caption">
+              <h3>Restaurante Gourmet</h3>
+              <p>Sabores únicos de la región</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="images/recepcion.jpeg" alt="Frescura">
+            <div class="slide-caption">
+              <h3>Recepción Elegante</h3>
+              <p>Servicio personalizado 24/7</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="images/relax.jpg" alt="Frescura">
+            <div class="slide-caption">
+              <h3>Zona de Relax</h3>
+              <p>Momentos de tranquilidad</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Controles del carrusel -->
+        <button class="carousel-btn prev" onclick="changeSlide(-1)">
+          <span>&#10094;</span>
+        </button>
+        <button class="carousel-btn next" onclick="changeSlide(1)">
+          <span>&#10095;</span>
+        </button>
+        
+        <!-- Indicadores -->
+        <div class="carousel-indicators">
+          <span class="indicator active" onclick="currentSlide(1)"></span>
+          <span class="indicator" onclick="currentSlide(2)"></span>
+          <span class="indicator" onclick="currentSlide(3)"></span>
+          <span class="indicator" onclick="currentSlide(4)"></span>
+          <span class="indicator" onclick="currentSlide(5)"></span>
+          <span class="indicator" onclick="currentSlide(6)"></span>
+          <span class="indicator" onclick="currentSlide(7)"></span>
+          <span class="indicator" onclick="currentSlide(8)"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="habitaciones" class="habitaciones">
+    <div class="container">
+      <h2>Habitaciones</h2>
+      <p>Nuestras habitaciones están diseñadas para el descanso total, con vistas al mar, aire acondicionado, minibar y decoración moderna.</p>
+      <div class="imagenes">
+        <img src="images/suit1.jpg" alt="Habitación estándar">
+        <img src="images/suit2.jpg" alt="Hermosa vista">
+        <img src="images/suit3.jpg" alt="Para descansar">
+        <img src="images/suitdoble.jpg" alt="Para descansar">
+        <img src="images/suit5.jpg" alt="Para descansar">
+      </div>
+    </div>
+  </section>
+
+  <section id="eventos" class="eventos">
+    <div class="container">
+      <h2>Eventos</h2>
+      <p>Organiza tus reuniones, bodas o celebraciones en nuestros elegantes salones, con capacidad hasta 300 personas y todo el equipo necesario.</p>
+      <div class="imagenes">
+        <img src="images/matrimonio.jpeg" alt="Boda">
+        <img src="images/matrominio1.jpeg" alt="Evento empresarial">
+        <img src="images/matrimonio2.jpeg" alt="Evento empresarial">
+        <img src="images/evento.jpg" alt="Evento empresarial">
+        <img src="images/matrimonio3.png" alt="Evento empresarial">
+      </div>
+    </div>
+  </section>
+
+  <section id="reservaciones" class="reservaciones">
+    <div class="container">
+      <h2>Reserva tu Estancia</h2>
+      <p>Reserva tu habitación ideal y disfruta de una experiencia inolvidable en Cartagena.</p>
+      
+      <div class="reservation-container">
+        <form class="reservation-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="checkIn">Fecha de Llegada</label>
+              <input type="date" id="checkIn" name="checkIn" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="checkOut">Fecha de Salida</label>
+              <input type="date" id="checkOut" name="checkOut" required>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="adults">Adultos</label>
+              <select id="adults" name="adults" required>
+                <option value="">Seleccionar</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="children">Niños</label>
+              <select id="children" name="children">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="roomType">Tipo de Habitación</label>
+            <select id="roomType" name="roomType" required>
+              <option value="">Seleccionar</option>
+              <option value="standard">Habitación Estándar</option>
+              <option value="deluxe">Habitación Deluxe</option>
+              <option value="suite">Suite</option>
+              <option value="family">Habitación Familiar</option>
+            </select>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Nombre Completo</label>
+              <input type="text" id="name" name="name" placeholder="Tu nombre completo" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Correo Electrónico</label>
+              <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Teléfono</label>
+            <input type="tel" id="phone" name="phone" placeholder="+57 300 123 4567" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="specialRequests">Solicitudes Especiales</label>
+            <textarea id="specialRequests" name="specialRequests" placeholder="Algún requerimiento especial..."></textarea>
+          </div>
+          
+          <div class="price-summary">
+            <div class="price-item">
+              <span>Precio por noche:</span>
+              <span class="price">$150.000</span>
+            </div>
+            <div class="price-item">
+              <span>Noches:</span>
+              <span id="nights">0</span>
+            </div>
+            <div class="price-total">
+              <span>Total:</span>
+              <span class="total-price">$0</span>
+            </div>
+          </div>
+          
+          <button type="submit" class="reserve-btn">
+            <span>Reservar Ahora</span>
+            <small>Confirmación inmediata</small>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Hotel Mar del Sol. Todos los derechos reservados.</p>
+      <div class="redes">
+        <a href="#">Facebook</a> |
+        <a href="#">Instagram</a> |
+        <a href="#">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/main.js"></script>
+</body>
+</html>
+

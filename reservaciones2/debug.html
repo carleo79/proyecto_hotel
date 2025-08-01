@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug - Reservaciones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .debug-info {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .test-form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e9ecef;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        button {
+            width: 100%;
+            padding: 15px;
+            background: #e7b85c;
+            color: #1a2236;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="debug-info">
+        <h2>Debug - Información del Sistema</h2>
+        <p><strong>Fecha:</strong> <span id="currentDate"></span></p>
+        <p><strong>Navegador:</strong> <span id="userAgent"></span></p>
+        <p><strong>JavaScript:</strong> <span id="jsStatus">Verificando...</span></p>
+    </div>
+    
+    <div class="test-form">
+        <h2>Test - Formulario Simple</h2>
+        <form id="testForm">
+            <div class="form-group">
+                <label for="testName">Nombre:</label>
+                <input type="text" id="testName" name="testName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="testEmail">Email:</label>
+                <input type="email" id="testEmail" name="testEmail" required>
+            </div>
+            
+            <button type="submit">Enviar Test</button>
+        </form>
+    </div>
+    
+    <script>
+        // Debug information
+        document.getElementById('currentDate').textContent = new Date().toLocaleString();
+        document.getElementById('userAgent').textContent = navigator.userAgent;
+        document.getElementById('jsStatus').textContent = 'JavaScript funcionando correctamente';
+        
+        // Test form submission
+        document.getElementById('testForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Formulario de test funcionando correctamente!');
+        });
+        
+        console.log('Debug page loaded successfully');
+    </script>
+</body>
+</html> 
