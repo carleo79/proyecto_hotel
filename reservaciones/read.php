@@ -2,24 +2,36 @@
 <?php
 require 'db.php';
 
-$consulta_hotel = mysqli_query($conn, "SELECT * FROM reservaciones");
+$consulta_hotel = mysqli_query($conn, "SELECT * FROM reservacion2");
 
 if (mysqli_num_rows($consulta_hotel) > 0) 
 {
     while ($row = mysqli_fetch_assoc($consulta_hotel)) 
     {
+        // Mapear el tipo de habitación a texto
+        $tipos_habitacion = [
+            1 => 'Estándar',
+            2 => 'Deluxe',
+            3 => 'Suite',
+            4 => 'Familiar'
+        ];
+        
+        $tipo_habitacion_texto = isset($tipos_habitacion[$row['tipo_habitacion']]) 
+            ? $tipos_habitacion[$row['tipo_habitacion']] 
+            : 'Desconocido';
+        
         echo "<tr>
-                <td>{$row['id']}</td>
+                <td>{$row['id_reservacion']}</td>
                 <td>{$row['nombre']}</td>
                 <td>{$row['apellido']}</td>
-                <td>{$row['telefono']}</td>
-                <td>{$row['habitacion']}</td>
                 <td>{$row['fecha_entrada']}</td>
                 <td>{$row['fecha_salida']}</td>
-                <td>{$row['precio']}</td>
+                <td>{$row['adultos']}</td>
+                <td>{$row['kids']}</td>
+                <td>{$tipo_habitacion_texto}</td>
                 <td>
-                    <button onclick='eliminarReservacion({$row['id']})'>Eliminar</button>
-                    <button onclick='mostrarFormularioActualizar({$row['id']}, \"{$row['nombre']}\", \"{$row['apellido']}\", \"{$row['telefono']}\", \"{$row['habitacion']}\", \"{$row['fecha_entrada']}\", \"{$row['fecha_salida']}\", \"{$row['precio']}\")'>Actualizar</button>
+                    <button onclick='eliminarReservacion({$row['id_reservacion']})'>Eliminar</button>
+                    <button onclick='mostrarFormularioActualizar({$row['id_reservacion']}, \"{$row['nombre']}\", \"{$row['apellido']}\", \"{$row['fecha_entrada']}\", \"{$row['fecha_salida']}\", \"{$row['adultos']}\", \"{$row['kids']}\", \"{$row['tipo_habitacion']}\")'>Actualizar</button>
                 </td>
             </tr>";
     }
