@@ -27,7 +27,10 @@
             <li><a href="#galeria">Galería</a></li>
             <li><a href="#habitaciones">Habitaciones</a></li>
             <li><a href="#eventos">Eventos</a></li>
+            <li><a href="reservaciones/index.php">Reservaciones 1 </a></li>
             <li><a href="reservaciones2/index.php">Reservaciones 2</a></li>
+            <li><a href="login/login.php">Login</a></li>
+
           </ul>
         </nav>
         <div class="social-media">
@@ -227,74 +230,74 @@
       <div class="carousel-container">
         <div class="carousel-wrapper">
           <div class="carousel-slide active">
-            <img src="images/zonascomunes.jpg" alt="Elegancia">
             <div class="slide-caption">
               <h3>Zonas Comunes</h3>
               <p>Espacios elegantes para tu comodidad</p>
             </div>
+            <img src="images/zonascomunes.jpg" alt="Elegancia">
           </div>
           <div class="carousel-slide">
-            <img src="images/suit1.jpg" alt="Habitaciones de lujo">
             <div class="slide-caption">
               <h3>Habitaciones de Lujo</h3>
               <p>Confort y elegancia en cada detalle</p>
             </div>
+            <img src="images/suit1.jpg" alt="Habitaciones de lujo">
           </div>
           <div class="carousel-slide">
-            <img src="images/suit2.jpg" alt="Confort">
             <div class="slide-caption">
               <h3>Máximo Confort</h3>
               <p>Diseño moderno y funcional</p>
             </div>
+            <img src="images/suit2.jpg" alt="Confort">
           </div>
           <div class="carousel-slide">
-            <img src="images/suit3.jpg" alt="Vacaciones innolvidables">
             <div class="slide-caption">
               <h3>Vacaciones Inolvidables</h3>
               <p>Experiencias únicas en Cartagena</p>
             </div>
+            <img src="images/suit3.jpg" alt="Vacaciones innolvidables">
           </div>
           <div class="carousel-slide">
-            <img src="images/suitdoble.jpg" alt="Perfecto para la familia">
             <div class="slide-caption">
               <h3>Perfecto para la Familia</h3>
               <p>Espacios amplios y acogedores</p>
             </div>
+            <img src="images/suitdoble.jpg" alt="Perfecto para la familia">
           </div>
           <div class="carousel-slide">
-            <img src="images/piscinahotel.jpg" alt="Vista del Sol">
             <div class="slide-caption">
               <h3>Piscina con Vista al Mar</h3>
               <p>Relájate con la mejor vista</p>
             </div>
+            <img src="images/piscinahotel.jpg" alt="Vista del Sol">
           </div>
           <div class="carousel-slide">
-            <img src="images/piscinahotelinterior.jpg" alt="Frescura">
             <div class="slide-caption">
               <h3>Área de Piscina Interior</h3>
               <p>Frescura y elegancia combinadas</p>
             </div>
+            <img src="images/piscinahotelinterior.jpg" alt="Frescura">
           </div>
           <div class="carousel-slide">
-            <img src="images/comedor.jpg" alt="Frescura">
             <div class="slide-caption">
               <h3>Restaurante Gourmet</h3>
               <p>Sabores únicos de la región</p>
             </div>
+            <img src="images/comedor.jpg" alt="Frescura">
           </div>
           <div class="carousel-slide">
-            <img src="images/recepcion.jpeg" alt="Frescura">
             <div class="slide-caption">
               <h3>Recepción Elegante</h3>
               <p>Servicio personalizado 24/7</p>
             </div>
+            <img src="images/recepcion.jpeg" alt="Frescura">
           </div>
           <div class="carousel-slide">
-            <img src="images/relax.jpg" alt="Frescura">
             <div class="slide-caption">
               <h3>Zona de Relax</h3>
               <p>Momentos de tranquilidad</p>
             </div>
+            <img src="images/relax.jpg" alt="Frescura">
           </div>
         </div>
         
@@ -325,12 +328,60 @@
     <div class="container">
       <h2>Habitaciones</h2>
       <p>Nuestras habitaciones están diseñadas para el descanso total, con vistas al mar, aire acondicionado, minibar y decoración moderna.</p>
-      <div class="imagenes">
-        <img src="images/suit1.jpg" alt="Habitación estándar">
-        <img src="images/suit2.jpg" alt="Hermosa vista">
-        <img src="images/suit3.jpg" alt="Para descansar">
-        <img src="images/suitdoble.jpg" alt="Para descansar">
-        <img src="images/suit5.jpg" alt="Para descansar">
+      
+      <div class="rooms-carousel-container">
+        <div class="rooms-carousel-wrapper">
+          <div class="rooms-carousel-slide active">
+            <img src="images/suit1.jpg" alt="Habitación Estándar">
+            <div class="rooms-slide-caption">
+              <h3>Habitación Estándar</h3>
+              <p>Confort y elegancia en cada detalle</p>
+            </div>
+          </div>
+          
+          <div class="rooms-carousel-slide">
+            <img src="images/suit2.jpg" alt="Habitación Deluxe">
+            <div class="rooms-slide-caption">
+              <h3>Habitación Deluxe</h3>
+              <p>Lujo y sofisticación en Cartagena</p>
+            </div>
+          </div>
+          
+          <div class="rooms-carousel-slide">
+            <img src="images/suit3.jpg" alt="Suite Premium">
+            <div class="rooms-slide-caption">
+              <h3>Suite Premium</h3>
+              <p>La máxima experiencia de hospedaje</p>
+            </div>
+          </div>
+          
+          <div class="rooms-carousel-slide">
+            <img src="images/suitdoble.jpg" alt="Habitación Familiar">
+            <div class="rooms-slide-caption">
+              <h3>Habitación Familiar</h3>
+              <p>Espacios amplios para toda la familia</p>
+            </div>
+          </div>
+          
+          <div class="rooms-carousel-slide">
+            <img src="images/suit5.jpg" alt="Suite Ejecutiva">
+            <div class="rooms-slide-caption">
+              <h3>Suite Ejecutiva</h3>
+              <p>Ideal para viajes de negocios</p>
+            </div>
+          </div>
+        </div>
+        
+        <button class="rooms-carousel-btn prev" onclick="moveRoomsCarousel(-1)">❮</button>
+        <button class="rooms-carousel-btn next" onclick="moveRoomsCarousel(1)">❯</button>
+        
+        <div class="rooms-carousel-indicators">
+          <span class="rooms-indicator active" onclick="currentRoomsSlide(1)"></span>
+          <span class="rooms-indicator" onclick="currentRoomsSlide(2)"></span>
+          <span class="rooms-indicator" onclick="currentRoomsSlide(3)"></span>
+          <span class="rooms-indicator" onclick="currentRoomsSlide(4)"></span>
+          <span class="rooms-indicator" onclick="currentRoomsSlide(5)"></span>
+        </div>
       </div>
     </div>
   </section>
@@ -339,116 +390,59 @@
     <div class="container">
       <h2>Eventos</h2>
       <p>Organiza tus reuniones, bodas o celebraciones en nuestros elegantes salones, con capacidad hasta 300 personas y todo el equipo necesario.</p>
-      <div class="imagenes">
-        <img src="images/matrimonio.jpeg" alt="Boda">
-        <img src="images/matrominio1.jpeg" alt="Evento empresarial">
-        <img src="images/matrimonio2.jpeg" alt="Evento empresarial">
-        <img src="images/evento.jpg" alt="Evento empresarial">
-        <img src="images/matrimonio3.png" alt="Evento empresarial">
+      <div class="events-carousel-container">
+        <div class="events-carousel-wrapper">
+          <div class="events-carousel-slide active">
+            <img src="images/matrimonio.jpeg" alt="Boda">
+            <div class="events-slide-caption">
+              <h3>Bodas</h3>
+              <p>Celebra tu día especial en un entorno mágico</p>
+            </div>
+          </div>
+          <div class="events-carousel-slide">
+            <img src="images/matrominio1.jpeg" alt="Evento empresarial">
+            <div class="events-slide-caption">
+              <h3>Eventos Empresariales</h3>
+              <p>Salones equipados para conferencias y reuniones</p>
+            </div>
+          </div>
+          <div class="events-carousel-slide">
+            <img src="images/matrimonio2.jpeg" alt="Celebración">
+            <div class="events-slide-caption">
+              <h3>Celebraciones</h3>
+              <p>Fiestas y eventos sociales inolvidables</p>
+            </div>
+          </div>
+          <div class="events-carousel-slide">
+            <img src="images/evento.jpg" alt="Conferencia">
+            <div class="events-slide-caption">
+              <h3>Conferencias</h3>
+              <p>Espacios profesionales para eventos corporativos</p>
+            </div>
+          </div>
+          <div class="events-carousel-slide">
+            <img src="images/matrimonio3.png" alt="Evento especial">
+            <div class="events-slide-caption">
+              <h3>Eventos Especiales</h3>
+              <p>Celebraciones únicas y memorables</p>
+            </div>
+          </div>
+        </div>
+        
+        <button class="events-carousel-btn prev" onclick="moveEventsCarousel(-1)">❮</button>
+        <button class="events-carousel-btn next" onclick="moveEventsCarousel(1)">❯</button>
+        
+        <div class="events-carousel-indicators">
+          <span class="events-indicator active" onclick="currentEventsSlide(1)"></span>
+          <span class="events-indicator" onclick="currentEventsSlide(2)"></span>
+          <span class="events-indicator" onclick="currentEventsSlide(3)"></span>
+          <span class="events-indicator" onclick="currentEventsSlide(4)"></span>
+          <span class="events-indicator" onclick="currentEventsSlide(5)"></span>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="reservaciones" class="reservaciones">
-    <div class="container">
-      <h2>Reserva tu Estancia</h2>
-      <p>Reserva tu habitación ideal y disfruta de una experiencia inolvidable en Cartagena.</p>
-      
-      <div class="reservation-container">
-        <form class="reservation-form">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="checkIn">Fecha de Llegada</label>
-              <input type="date" id="checkIn" name="checkIn" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="checkOut">Fecha de Salida</label>
-              <input type="date" id="checkOut" name="checkOut" required>
-            </div>
-          </div>
-          
-          <div class="form-row">
-            <div class="form-group">
-              <label for="adults">Adultos</label>
-              <select id="adults" name="adults" required>
-                <option value="">Seleccionar</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
-            </div>
-            
-            <div class="form-group">
-              <label for="children">Niños</label>
-              <select id="children" name="children">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-              </select>
-            </div>
-          </div>
-          
-          <div class="form-group">
-            <label for="roomType">Tipo de Habitación</label>
-            <select id="roomType" name="roomType" required>
-              <option value="">Seleccionar</option>
-              <option value="standard">Habitación Estándar</option>
-              <option value="deluxe">Habitación Deluxe</option>
-              <option value="suite">Suite</option>
-              <option value="family">Habitación Familiar</option>
-            </select>
-          </div>
-          
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Nombre Completo</label>
-              <input type="text" id="name" name="name" placeholder="Tu nombre completo" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="email">Correo Electrónico</label>
-              <input type="email" id="email" name="email" placeholder="tu@email.com" required>
-            </div>
-          </div>
-          
-          <div class="form-group">
-            <label for="phone">Teléfono</label>
-            <input type="tel" id="phone" name="phone" placeholder="+57 300 123 4567" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="specialRequests">Solicitudes Especiales</label>
-            <textarea id="specialRequests" name="specialRequests" placeholder="Algún requerimiento especial..."></textarea>
-          </div>
-          
-          <div class="price-summary">
-            <div class="price-item">
-              <span>Precio por noche:</span>
-              <span class="price">$150.000</span>
-            </div>
-            <div class="price-item">
-              <span>Noches:</span>
-              <span id="nights">0</span>
-            </div>
-            <div class="price-total">
-              <span>Total:</span>
-              <span class="total-price">$0</span>
-            </div>
-          </div>
-          
-          <button type="submit" class="reserve-btn">
-            <span>Reservar Ahora</span>
-            <small>Confirmación inmediata</small>
-          </button>
-        </form>
-      </div>
-    </div>
-  </section>
 
   <footer class="footer">
     <div class="container">

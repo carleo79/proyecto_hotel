@@ -149,4 +149,194 @@ document.addEventListener('DOMContentLoaded', function() {
       header.style.background = 'rgba(0, 0, 0, 0.4)';
     }
   });
+});
+
+// Funcionalidad del carrusel de habitaciones
+document.addEventListener('DOMContentLoaded', function() {
+  const roomsCarousel = document.querySelector('.rooms-carousel-wrapper');
+  const roomsSlides = document.querySelectorAll('.rooms-carousel-slide');
+  const roomsPrevBtn = document.querySelector('.rooms-carousel-btn.prev');
+  const roomsNextBtn = document.querySelector('.rooms-carousel-btn.next');
+  const roomsIndicators = document.querySelectorAll('.rooms-indicator');
+  
+  if (!roomsCarousel || roomsSlides.length === 0) return;
+  
+  let currentRoomsSlide = 0;
+  const totalRoomsSlides = roomsSlides.length;
+  
+  // Función para actualizar el carrusel de habitaciones
+  function updateRoomsCarousel() {
+    if (roomsCarousel) {
+      // Calcular el desplazamiento para mostrar 3 imágenes a la vez
+      const slideWidth = 33.333; // 100% / 3
+      const offset = currentRoomsSlide * slideWidth;
+      roomsCarousel.style.transform = `translateX(-${offset}%)`;
+    }
+    
+    // Actualizar indicadores
+    roomsIndicators.forEach((indicator, index) => {
+      indicator.classList.toggle('active', index === currentRoomsSlide);
+    });
+    
+    // Actualizar clases active en slides
+    roomsSlides.forEach((slide, index) => {
+      slide.classList.toggle('active', index === currentRoomsSlide);
+    });
+  }
+  
+  // Función para mover el carrusel
+  function moveRoomsCarousel(direction) {
+    currentRoomsSlide += direction;
+    
+    // Limitar el rango de slides
+    if (currentRoomsSlide >= totalRoomsSlides - 2) {
+      currentRoomsSlide = totalRoomsSlides - 3;
+    } else if (currentRoomsSlide < 0) {
+      currentRoomsSlide = 0;
+    }
+    
+    updateRoomsCarousel();
+  }
+  
+  // Función para ir a una slide específica
+  function goToRoomsSlide(slideIndex) {
+    currentRoomsSlide = slideIndex - 1;
+    
+    // Limitar el rango
+    if (currentRoomsSlide >= totalRoomsSlides - 2) {
+      currentRoomsSlide = totalRoomsSlides - 3;
+    } else if (currentRoomsSlide < 0) {
+      currentRoomsSlide = 0;
+    }
+    
+    updateRoomsCarousel();
+  }
+  
+  // Botón siguiente
+  if (roomsNextBtn) {
+    roomsNextBtn.addEventListener('click', () => {
+      moveRoomsCarousel(1);
+    });
+  }
+  
+  // Botón anterior
+  if (roomsPrevBtn) {
+    roomsPrevBtn.addEventListener('click', () => {
+      moveRoomsCarousel(-1);
+    });
+  }
+  
+  // Indicadores
+  roomsIndicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      goToRoomsSlide(index + 1);
+    });
+  });
+  
+  // Auto-play para el carrusel de habitaciones
+  setInterval(() => {
+    moveRoomsCarousel(1);
+  }, 4000);
+  
+  // Inicializar
+  updateRoomsCarousel(false);
+  
+  // Hacer las funciones globales para los onclick del HTML
+  window.moveRoomsCarousel = moveRoomsCarousel;
+  window.currentRoomsSlide = goToRoomsSlide;
+}); 
+
+// Funcionalidad del carrusel de eventos
+document.addEventListener('DOMContentLoaded', function() {
+  const eventsCarousel = document.querySelector('.events-carousel-wrapper');
+  const eventsSlides = document.querySelectorAll('.events-carousel-slide');
+  const eventsPrevBtn = document.querySelector('.events-carousel-btn.prev');
+  const eventsNextBtn = document.querySelector('.events-carousel-btn.next');
+  const eventsIndicators = document.querySelectorAll('.events-indicator');
+  
+  if (!eventsCarousel || eventsSlides.length === 0) return;
+  
+  let currentEventsSlide = 0;
+  const totalEventsSlides = eventsSlides.length;
+  
+  // Función para actualizar el carrusel de eventos
+  function updateEventsCarousel() {
+    if (eventsCarousel) {
+      // Calcular el desplazamiento para mostrar 3 imágenes a la vez
+      const slideWidth = 33.333; // 100% / 3
+      const offset = currentEventsSlide * slideWidth;
+      eventsCarousel.style.transform = `translateX(-${offset}%)`;
+    }
+    
+    // Actualizar indicadores
+    eventsIndicators.forEach((indicator, index) => {
+      indicator.classList.toggle('active', index === currentEventsSlide);
+    });
+    
+    // Actualizar clases active en slides
+    eventsSlides.forEach((slide, index) => {
+      slide.classList.toggle('active', index === currentEventsSlide);
+    });
+  }
+  
+  // Función para mover el carrusel
+  function moveEventsCarousel(direction) {
+    currentEventsSlide += direction;
+    
+    // Limitar el rango de slides
+    if (currentEventsSlide >= totalEventsSlides - 2) {
+      currentEventsSlide = totalEventsSlides - 3;
+    } else if (currentEventsSlide < 0) {
+      currentEventsSlide = 0;
+    }
+    
+    updateEventsCarousel();
+  }
+  
+  // Función para ir a una slide específica
+  function goToEventsSlide(slideIndex) {
+    currentEventsSlide = slideIndex - 1;
+    
+    // Limitar el rango
+    if (currentEventsSlide >= totalEventsSlides - 2) {
+      currentEventsSlide = totalEventsSlides - 3;
+    } else if (currentEventsSlide < 0) {
+      currentEventsSlide = 0;
+    }
+    
+    updateEventsCarousel();
+  }
+  
+  // Botón siguiente
+  if (eventsNextBtn) {
+    eventsNextBtn.addEventListener('click', () => {
+      moveEventsCarousel(1);
+    });
+  }
+  
+  // Botón anterior
+  if (eventsPrevBtn) {
+    eventsPrevBtn.addEventListener('click', () => {
+      moveEventsCarousel(-1);
+    });
+  }
+  
+  // Indicadores
+  eventsIndicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      goToEventsSlide(index + 1);
+    });
+  });
+  
+  // Auto-play para el carrusel de eventos
+  setInterval(() => {
+    moveEventsCarousel(1);
+  }, 4000);
+  
+  // Inicializar
+  updateEventsCarousel();
+  
+  // Hacer las funciones globales para los onclick del HTML
+  window.moveEventsCarousel = moveEventsCarousel;
+  window.currentEventsSlide = goToEventsSlide;
 }); 

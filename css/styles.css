@@ -15,9 +15,9 @@ body {
   min-height: 100vh;
 }
 .header {
-  background: rgba(0, 0, 0, 0.4);
+  background: #f8f9fa;
   backdrop-filter: blur(15px);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 30px rgba(5, 8, 216, 0.548);
   padding: 15px 0;
   margin: 0;
   position: absolute;
@@ -68,6 +68,7 @@ body {
   flex: 1;
   display: flex;
   justify-content: center;
+  padding-right: 120px;
 }
 
 .nav ul {
@@ -81,7 +82,7 @@ body {
 }
 
 .nav a {
-  color: #ffffff;
+  color: #e7b85c;
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
@@ -373,15 +374,17 @@ button[type="submit"]:hover {
 }
 
 .slide-caption {
-  position: absolute;
-  bottom: 0;
+  position: absolute !important;
+  top: 0 !important;
+  bottom: auto !important;
   left: 0;
   right: 0;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  background: linear-gradient(rgba(0, 0, 0, 0.8), transparent) !important;
   color: white;
-  padding: 20px 15px 15px;
+  padding: 15px 15px 20px;
   text-align: center;
-  border-radius: 0 0 12px 12px;
+  border-radius: 12px 12px 0 0;
+  z-index: 5;
 }
 
 .slide-caption h3 {
@@ -534,7 +537,7 @@ button[type="submit"]:hover {
   }
   
   .header-logo {
-    height: 22px;
+    height: 42px;
   }
   
   .social-media {
@@ -597,6 +600,8 @@ button[type="submit"]:hover {
   
   .slide-caption {
     padding: 15px 10px 10px;
+    top: 0 !important;
+    bottom: auto !important;
   }
   
   .slide-caption h3 {
@@ -1167,7 +1172,7 @@ button[type="submit"]:hover {
   align-items: center;
   flex-shrink: 0;
   position: absolute;
-  right: 0;
+  right: 15px;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -1184,52 +1189,24 @@ button[type="submit"]:hover {
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #ffffff;
   text-decoration: none;
-  transition: all 0.3s ease;
   position: relative;
-  overflow: hidden;
-}
-
-.social-link::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s ease;
-}
-
-.social-link:hover::before {
-  left: 100%;
-}
-
-.social-link:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.social-link.instagram:hover {
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-  border-color: #dc2743;
-}
-
-.social-link.facebook:hover {
-  background: #1877f2;
-  border-color: #1877f2;
-}
-
-.social-link.whatsapp:hover {
-  background: #25d366;
-  border-color: #25d366;
 }
 
 .social-link svg {
-  transition: transform 0.3s ease;
+  color: #ffffff;
 }
 
-.social-link:hover svg {
-  transform: scale(1.1);
+/* Brand colors for social media icons */
+.social-link.whatsapp svg {
+  color: #25D366;
+}
+
+.social-link.facebook svg {
+  color: #1877F2;
+}
+
+.social-link.instagram svg {
+  color: #E4405F;
 }
 
 /* Estilos para la sección de servicios */
@@ -1618,5 +1595,432 @@ button[type="submit"]:hover {
   .reserve-btn {
     padding: 0.8rem 1.5rem;
     font-size: 0.9rem;
+  }
+}
+
+/* Regla específica para forzar la posición superior de los textos del carrusel */
+.carousel-slide .slide-caption {
+  position: absolute !important;
+  top: 0 !important;
+  bottom: auto !important;
+  left: 0 !important;
+  right: 0 !important;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), transparent) !important;
+  color: white !important;
+  padding: 15px 15px 20px !important;
+  text-align: center !important;
+  border-radius: 12px 12px 0 0 !important;
+  z-index: 10 !important;
+}
+
+/* Estilos para el carrusel de habitaciones */
+.rooms-carousel-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.rooms-carousel-wrapper {
+  position: relative;
+  height: 500px;
+  width: 500%;
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+}
+
+.rooms-carousel-slide {
+  flex: 0 0 calc(33.333% - 20px);
+  width: calc(33.333% - 20px);
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  margin: 0 10px;
+}
+
+.rooms-carousel-slide:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.rooms-carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.rooms-carousel-slide:hover img {
+  transform: scale(1.05);
+}
+
+.rooms-slide-caption {
+  position: absolute !important;
+  top: 0 !important;
+  bottom: auto !important;
+  left: 0;
+  right: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), transparent) !important;
+  color: white;
+  padding: 20px 15px 15px;
+  text-align: center;
+  border-radius: 12px 12px 0 0;
+  z-index: 5;
+}
+
+.rooms-slide-caption h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.3em;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.rooms-slide-caption p {
+  margin: 0;
+  font-size: 1em;
+  opacity: 0.9;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Botones de navegación para habitaciones */
+.rooms-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  color: #333;
+  transition: all 0.3s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.rooms-carousel-btn:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.rooms-carousel-btn.prev {
+  left: 20px;
+}
+
+.rooms-carousel-btn.next {
+  right: 20px;
+}
+
+/* Indicadores para habitaciones */
+.rooms-carousel-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.rooms-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.rooms-indicator:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+
+.rooms-indicator.active {
+  background: white;
+  border-color: white;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive para el carrusel de habitaciones */
+@media (max-width: 768px) {
+  .rooms-carousel-container {
+    max-width: 100%;
+    margin: 0 10px;
+  }
+  
+  .rooms-carousel-wrapper {
+    height: 350px;
+  }
+  
+  .rooms-carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  
+  .rooms-carousel-btn.prev {
+    left: 15px;
+  }
+  
+  .rooms-carousel-btn.next {
+    right: 15px;
+  }
+  
+  .rooms-slide-caption {
+    padding: 15px 10px 10px;
+  }
+  
+  .rooms-slide-caption h3 {
+    font-size: 1.1em;
+  }
+  
+  .rooms-slide-caption p {
+    font-size: 0.9em;
+  }
+  
+  .rooms-carousel-indicators {
+    bottom: 15px;
+  }
+  
+  .rooms-indicator {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rooms-carousel-wrapper {
+    height: 300px;
+  }
+  
+  .rooms-carousel-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+  
+  .rooms-carousel-btn.prev {
+    left: 10px;
+  }
+  
+  .rooms-carousel-btn.next {
+    right: 10px;
+  }
+}
+
+/* Carrusel de Eventos */
+.events-carousel-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.events-carousel-wrapper {
+  position: relative;
+  height: 500px;
+  width: 500%;
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+}
+
+.events-carousel-slide {
+  flex: 0 0 calc(33.333% - 20px);
+  width: calc(33.333% - 20px);
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  margin: 0 10px;
+}
+
+.events-carousel-slide:hover {
+  transform: scale(1.02);
+}
+
+.events-carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.events-carousel-slide:hover img {
+  transform: scale(1.05);
+}
+
+.events-slide-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.4) 100%);
+  color: white;
+  padding: 20px 15px 15px;
+  border-radius: 12px 12px 0 0;
+  z-index: 5;
+}
+
+.events-slide-caption h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.4em;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.events-slide-caption p {
+  margin: 0;
+  font-size: 0.95em;
+  line-height: 1.4;
+  opacity: 0.9;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.events-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  color: #333;
+  transition: all 0.3s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.events-carousel-btn:hover {
+  background: white;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.events-carousel-btn.prev {
+  left: 20px;
+}
+
+.events-carousel-btn.next {
+  right: 20px;
+}
+
+/* Indicadores para eventos */
+.events-carousel-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.events-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.events-indicator:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+
+.events-indicator.active {
+  background: white;
+  border-color: white;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive para el carrusel de eventos */
+@media (max-width: 768px) {
+  .events-carousel-container {
+    max-width: 100%;
+    margin: 0 10px;
+  }
+  
+  .events-carousel-wrapper {
+    height: 350px;
+  }
+  
+  .events-carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  
+  .events-carousel-btn.prev {
+    left: 15px;
+  }
+  
+  .events-carousel-btn.next {
+    right: 15px;
+  }
+  
+  .events-slide-caption {
+    padding: 15px 10px 10px;
+  }
+  
+  .events-slide-caption h3 {
+    font-size: 1.1em;
+  }
+  
+  .events-slide-caption p {
+    font-size: 0.9em;
+  }
+  
+  .events-carousel-indicators {
+    bottom: 15px;
+  }
+  
+  .events-indicator {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .events-carousel-wrapper {
+    height: 300px;
+  }
+  
+  .events-carousel-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+  
+  .events-carousel-btn.prev {
+    left: 10px;
+  }
+  
+  .events-carousel-btn.next {
+    right: 10px;
   }
 }
