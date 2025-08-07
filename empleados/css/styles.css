@@ -1,190 +1,398 @@
-/* Estilos Generales */
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: #f8f9fa;
+    color: #1a2236;
     margin: 0;
-    padding: 0;
+    padding: 1rem 0;
+    line-height: 1.4;
 }
 
-/* Cabecera */
-header {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    font-size: 24px;
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
-/* Tabla de Reservaciones */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
-
-table th, table td {
-    padding: 12px;
-    text-align: left;
-    border: 1px solid #ddd;
-}
-
-table th {
-    background-color: #4CAF50;
-    color: white;
-}
-
-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-button {
-    background-color: #4CAF50;
-    color: white;
+/* Botón de regreso */
+.back-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #e7b85c 0%, #f4d03f 100%);
+    color: #1a2236;
     border: none;
-    padding: 10px 20px;
+    border-radius: 50px;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
     cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(231, 184, 92, 0.3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 1000;
 }
 
-button:hover {
-    background-color: #45a049;
+.back-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(231, 184, 92, 0.4);
+    background: linear-gradient(135deg, #f4d03f 0%, #e7b85c 100%);
 }
 
-button:disabled {
-    background-color: #ddd;
-    cursor: not-allowed;
+.back-button::before {
+    content: '←';
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
-/* Formulario */
-form {
-    background-color: white;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
+.container h2 {
+    text-align: center;
+    color: #1a2236;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.container > p {
+    text-align: center;
+    color: #6c757d;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
 
-form input[type="text"],
-form input[type="date"],
-form input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+.employee-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
 }
 
-form button {
+.employee-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #e7b85c, #f4d03f);
+}
+
+.employee-form {
+    padding: 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.form-group label {
+    color: #1a2236;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    margin-bottom: 0.2rem;
+    display: block;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.6rem 0.8rem;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+    color: #1a2236;
+    min-height: 38px;
     width: 100%;
-    padding: 12px;
-    font-size: 18px;
-    border-radius: 5px;
+    display: block;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #e7b85c;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(231, 184, 92, 0.1);
+    transform: translateY(-1px);
+}
+
+.form-group textarea {
+    min-height: 60px;
+    resize: vertical;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #e7b85c 0%, #f4d03f 100%);
+    color: #1a2236;
+    border: none;
+    border-radius: 10px;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 700;
     cursor: pointer;
-    background-color: #4CAF50;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    box-shadow: 0 6px 20px rgba(231, 184, 92, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 0.8rem;
 }
 
-form button[type="button"] {
-    background-color: #f44336;
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(231, 184, 92, 0.4);
+    background: linear-gradient(135deg, #f4d03f 0%, #e7b85c 100%);
 }
 
-form button[type="button"]:hover {
-    background-color: #e53935;
+.submit-btn small {
+    font-size: 0.7rem;
+    opacity: 0.8;
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: 0.3px;
 }
 
-form button:hover {
-    background-color: #45a049;
+/* Botón de cancelar para modo edición */
+.cancel-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    box-shadow: 0 6px 20px rgba(108, 117, 125, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 0.5rem;
 }
 
-/* Estilo para la tabla de detalles y botones adicionales */
+.cancel-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(108, 117, 125, 0.4);
+    background: linear-gradient(135deg, #495057 0%, #6c757d 100%);
+}
+
+.cancel-btn small {
+    font-size: 0.7rem;
+    opacity: 0.8;
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: 0.3px;
+}
+
+/* Estilos adicionales para la tabla de empleados */
+.table-container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Montserrat', sans-serif;
+}
+
+table thead {
+    background: linear-gradient(135deg, #1a2236 0%, #2c3e50 100%);
+    color: white;
+}
+
+table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    border: none;
+}
+
+/* Ancho específico para la columna de acciones */
+table th:last-child,
+table td:last-child {
+    width: 200px;
+    min-width: 200px;
+    text-align: center;
+}
+
+table td {
+    padding: 1rem;
+    border-bottom: 1px solid #e9ecef;
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+table tbody tr:hover {
+    background-color: #f8f9fa;
+    transition: background-color 0.3s ease;
+}
+
+table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Botones de acción */
 .btn-group {
     display: flex;
+    gap: 0.3rem;
     justify-content: center;
-    gap: 10px;
+    flex-wrap: nowrap;
 }
 
 .btn-group button {
-    background-color: #008CBA;
+    padding: 0.4rem 0.6rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    min-width: 45px;
+    white-space: nowrap;
+}
+
+.btn-group .edit-btn {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
     color: white;
 }
 
-.btn-group button:hover {
-    background-color: #007B8C;
+.btn-group .edit-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
 }
 
-/* Estilo para el mensaje de error/success */
+.btn-group .delete-btn {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+}
+
+.btn-group .delete-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+.btn-group .view-btn {
+    background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+    color: white;
+}
+
+.btn-group .view-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+}
+
+/* Alertas */
 .alert {
-    padding: 10px;
-    margin: 15px 0;
-    border-radius: 5px;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    font-weight: 600;
     text-align: center;
-    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .alert.success {
-    background-color: #4CAF50;
+    background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
     color: white;
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
 }
 
 .alert.error {
-    background-color: #f44336;
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
     color: white;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
 }
 
-/* Estilo para la actualización de reserva */
-form.update-form {
-    background-color: #ffffff;
-    padding: 30px;
-    margin: 20px 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.update-form input,
-.update-form select {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.update-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.update-form button:hover {
-    background-color: #45a049;
-}
-
-.update-form button[type="button"] {
-    background-color: #f44336;
-}
-
-.update-form button[type="button"]:hover {
-    background-color: #e53935;
-}
-
-/* Modificaciones para pantallas pequeñas */
 @media (max-width: 768px) {
+    .back-button {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px 16px;
+        font-size: 0.8rem;
+    }
+    
+    .employee-form {
+        padding: 2rem 1.5rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .table-container {
+        overflow-x: auto;
+    }
+    
     table {
-        font-size: 14px;
+        font-size: 0.8rem;
     }
-
-    form {
-        width: 90%;
+    
+    table th,
+    table td {
+        padding: 0.8rem 0.5rem;
     }
-
+    
+    /* Ancho específico para móviles */
+    table th:last-child,
+    table td:last-child {
+        width: 150px;
+        min-width: 150px;
+    }
+    
     .btn-group {
         flex-direction: column;
+        gap: 0.3rem;
+    }
+    
+    .btn-group button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.7rem;
+        min-width: 50px;
     }
 }

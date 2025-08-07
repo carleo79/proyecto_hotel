@@ -1,54 +1,39 @@
 <?php
 require_once '../libreria/db.php';
-// Obtener categorías
-$categorias = [];
-$res_cat = mysqli_query($conn, "SELECT id_categoria, nombre_categoria FROM categorias");
-if ($res_cat) {
-    while ($cat = mysqli_fetch_assoc($res_cat)) {
-        $categorias[] = $cat;
-    }
-}
-// Obtener proveedores
-$proveedores = [];
-$res_prov = mysqli_query($conn, "SELECT id_proveedor, nombre FROM proveedores");
-if ($res_prov) {
-    while ($prov = mysqli_fetch_assoc($res_prov)) {
-        $proveedores[] = $prov;
-    }
-}
-if (isset($_GET['id_producto'])) {
-    $id_producto = intval($_GET['id_producto']);
-    $sql = "SELECT * FROM productos WHERE id_producto = $id_producto";
-    $result = mysqli_query($conn, $sql);
-    $producto = mysqli_fetch_assoc($result);
-}
-// Variable para mensaje de error
-$mensaje_error = '';
-if (isset($_POST['update'])) {
-    $id_producto = intval($_POST['id_producto']);
-    $codigo_producto = mysqli_real_escape_string($conn, $_POST['codigo_producto']);
-    $nombre_producto = mysqli_real_escape_string($conn, $_POST['nombre_producto']);
-    $descripcion = mysqli_real_escape_string($conn, $_POST['descripcion']);
-    $id_categoria = !empty($_POST['id_categoria']) ? intval($_POST['id_categoria']) : 'NULL';
-    $id_proveedor = !empty($_POST['id_proveedor']) ? intval($_POST['id_proveedor']) : 'NULL';
-    $unidad_medida = mysqli_real_escape_string($conn, $_POST['unidad_medida']);
-    $precio_unitario = !empty($_POST['precio_unitario']) ? floatval($_POST['precio_unitario']) : 'NULL';
-    $costo_unitario = !empty($_POST['costo_unitario']) ? floatval($_POST['costo_unitario']) : 'NULL';
-    $ubicacion = mysqli_real_escape_string($conn, $_POST['ubicacion']);
-    $estado = mysqli_real_escape_string($conn, $_POST['estado']);
-    // Validar si el código ya existe en otro producto
-    $check = mysqli_query($conn, "SELECT 1 FROM productos WHERE codigo_producto = '$codigo_producto' AND id_producto != $id_producto");
-    if (mysqli_num_rows($check) > 0) {
-        $mensaje_error = "<div class='alert alert-danger'>El código de producto ya existe. Por favor, elige otro.</div>";
-    } else {
-        $sql = "UPDATE productos SET codigo_producto='$codigo_producto', nombre_producto='$nombre_producto', descripcion='$descripcion', id_categoria=$id_categoria, id_proveedor=$id_proveedor, unidad_medida='$unidad_medida', precio_unitario=$precio_unitario, costo_unitario=$costo_unitario, ubicacion='$ubicacion', estado='$estado' WHERE id_producto=$id_producto";
-        if (mysqli_query($conn, $sql)) {
+
+if (isset($_POST['update_id'])) {
+    $update_id = mysqli_real_escape_string($conn, $_POST['update_id']);
+    $update_nombre_producto = mysqli_real_escape_string($conn, $_POST['nombre_producto']);
+    $update_descripcion = mysqli_real_escape_string($conn, $_POST['descripcion']);
+    $update_precio_unitario = mysqli_real_escape_string($conn, $_POST['precio_unitario']);
+    $update_cantidad_disponible = mysqli_real_escape_string($conn, $_POST['cantidad_disponible']);
+    
+    // Actualizar la tabla productos
+    $sql = "UPDATE productos SET 
+            nombre_producto='$update_nombre_producto', 
+            descripcion='$update_descripcion', 
+            precio_unitario='$update_precio_unitario' 
+            WHERE id_producto='$update_id'";
+    
+    if (mysqli_query($conn, $sql)) {
+        // Actualizar la cantidad en la tabla inventario
+        $sql_inventario = "UPDATE inventario SET 
+                          cantidad_disponible='$update_cantidad_disponible',
+                          fecha_actualizacion=CURDATE()
+                          WHERE id_producto='$update_id'";
+        
+        if (mysqli_query($conn, $sql_inventario)) {
             header('Location: index.php?mensaje=Producto actualizado exitosamente');
         } else {
-            $mensaje_error = "<div class='alert alert-danger'>Error al actualizar: " . mysqli_error($conn) . "</div>";
+            header('Location: index.php?mensaje=Error al actualizar inventario: ' . mysqli_error($conn));
         }
+    } else {
+        header('Location: index.php?mensaje=Error al actualizar producto: ' . mysqli_error($conn));
     }
+    exit;
 }
+
+mysqli_close($conn);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -113,6 +98,10 @@ if (isset($_POST['update'])) {
         <div class="col-md-4">
             <label for="estado" class="form-label">Estado</label>
             <input type="text" id="estado" name="estado" class="form-control" value="<?php echo $producto['estado']; ?>">
+        </div>
+        <div class="col-md-4">
+            <label for="cantidad_disponible" class="form-label">Cantidad Disponible</label>
+            <input type="number" id="cantidad_disponible" name="cantidad_disponible" class="form-control" value="<?php echo $producto['cantidad_disponible']; ?>">
         </div>
         <div class="col-12">
             <button type="submit" name="update" class="btn btn-success">Actualizar</button>

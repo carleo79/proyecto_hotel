@@ -1,19 +1,20 @@
 <?php
-require 'db.php';
+require_once 'db.php';
 
-if (isset($_GET['delete_id'])) {
-    $delete_id = intval($_GET['delete_id']);
-    $delete_query = "DELETE FROM reservacion2 WHERE id_reservacion = $delete_id";
-
-    if (mysqli_query($conn, $delete_query)) {
-        header("Location: index.php?mensaje=¡Reservación eliminada exitosamente!");
-        exit;
+if (isset($_GET['id_reservacion'])) {
+    $id_reservacion = mysqli_real_escape_string($conn, $_GET['id_reservacion']);
+    
+    $sql = "DELETE FROM reservacion2 WHERE id_reservacion = '$id_reservacion'";
+    
+    if (mysqli_query($conn, $sql)) {
+        header('Location: index.php?mensaje=Reservación eliminada exitosamente');
     } else {
-        header("Location: index.php?error=Error al eliminar la reservación");
-        exit;
+        header('Location: index.php?mensaje=Error al eliminar: ' . mysqli_error($conn));
     }
 } else {
-    header("Location: index.php");
-    exit;
+    header('Location: index.php?mensaje=ID de reservación no proporcionado');
 }
+
+exit;
+mysqli_close($conn);
 ?>

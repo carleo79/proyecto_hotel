@@ -21,17 +21,19 @@ if (mysqli_num_rows($consulta_hotel) > 0)
             : 'Desconocido';
         
         echo "<tr>
-                <td>{$row['id_reservacion']}</td>
-                <td>{$row['nombre']}</td>
-                <td>{$row['apellido']}</td>
-                <td>{$row['fecha_entrada']}</td>
-                <td>{$row['fecha_salida']}</td>
-                <td>{$row['adultos']}</td>
-                <td>{$row['kids']}</td>
-                <td>{$tipo_habitacion_texto}</td>
+                <td>" . $row['id_reservacion'] . "</td>
+                <td>" . $row['nombre'] . "</td>
+                <td>" . $row['apellido'] . "</td>
+                <td>" . $row['fecha_entrada'] . "</td>
+                <td>" . $row['fecha_salida'] . "</td>
+                <td>" . $row['adultos'] . "</td>
+                <td>" . $row['kids'] . "</td>
+                <td>" . $tipo_habitacion_texto . "</td>
                 <td>
-                    <button onclick='eliminarReservacion({$row['id_reservacion']})'>Eliminar</button>
-                    <button onclick='mostrarFormularioActualizar({$row['id_reservacion']}, \"{$row['nombre']}\", \"{$row['apellido']}\", \"{$row['fecha_entrada']}\", \"{$row['fecha_salida']}\", \"{$row['adultos']}\", \"{$row['kids']}\", \"{$row['tipo_habitacion']}\")'>Actualizar</button>
+                    <div class=\"btn-group\">
+                        <button class=\"edit-btn\" onclick=\"mostrarFormularioActualizar(" . $row['id_reservacion'] . ", '" . addslashes($row['nombre']) . "', '" . addslashes($row['apellido']) . "', '" . $row['fecha_entrada'] . "', '" . $row['fecha_salida'] . "', '" . $row['adultos'] . "', '" . $row['kids'] . "', '" . $row['tipo_habitacion'] . "')\">Editar</button>
+                        <button class=\"delete-btn\" onclick=\"eliminarReservacion(" . $row['id_reservacion'] . ")\">Eliminar</button>
+                    </div>
                 </td>
             </tr>";
     }

@@ -1,37 +1,14 @@
-// JavaScript para gestión de empleados
+// JavaScript para gestión de proveedores
 
 // Validar el formulario antes de enviar
 function validarFormulario() {
     const nombre = document.querySelector('input[name="nombre"]').value.trim();
-    const apellido = document.querySelector('input[name="apellido"]').value.trim();
-    const telefono = document.querySelector('input[name="telefono"]').value.trim();
-    const correo = document.querySelector('input[name="correo"]').value.trim();
-    const fecha_entrada = document.querySelector('input[name="fecha_entrada"]').value.trim();
-    const fecha_salida = document.querySelector('input[name="fecha_salida"]').value.trim();
-    const salario = document.querySelector('input[name="salario"]').value.trim();
+    const contacto = document.querySelector('input[name="contacto"]').value.trim();
+    const direccion = document.querySelector('input[name="direccion"]').value.trim();
 
     // Validar campos requeridos
-    if (!nombre || !apellido || !telefono || !correo || !fecha_entrada || !fecha_salida || !salario) {
+    if (!nombre || !contacto || !direccion) {
         mostrarAlerta('Por favor, completa todos los campos.', 'error');
-        return false;
-    }
-
-    // Validar formato de correo
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(correo)) {
-        mostrarAlerta('Por favor, ingresa un correo electrónico válido.', 'error');
-        return false;
-    }
-
-    // Validar salario
-    if (isNaN(salario) || parseFloat(salario) <= 0) {
-        mostrarAlerta('El salario debe ser un número positivo.', 'error');
-        return false;
-    }
-
-    // Validar fechas
-    if (new Date(fecha_entrada) >= new Date(fecha_salida)) {
-        mostrarAlerta('La fecha de entrada debe ser anterior a la fecha de salida.', 'error');
         return false;
     }
 
@@ -61,18 +38,18 @@ function mostrarAlerta(mensaje, tipo) {
     }, 5000);
 }
 
-// Confirmación antes de eliminar un empleado
-function eliminarEmpleado(id) {
-    if (confirm("¿Estás seguro de que deseas eliminar este empleado?")) {
-        window.location.href = `delete.php?delete_id=${id}`;
+// Confirmación antes de eliminar un proveedor
+function eliminarProveedor(id) {
+    if (confirm("¿Estás seguro de que deseas eliminar este proveedor?")) {
+        window.location.href = `delete.php?id_proveedor=${id}`;
     }
 }
 
 
 
 // Mostrar el formulario de actualización en el formulario existente
-function mostrarFormularioActualizar(id, nombre, apellido, telefono, correo, fecha_entrada, fecha_salida, salario) {
-    const form = document.querySelector('.employee-form');
+function mostrarFormularioActualizar(id, nombre, contacto, direccion) {
+    const form = document.querySelector('.provider-form');
     const submitBtn = document.querySelector('.submit-btn');
     
     // Cambiar la acción del formulario
@@ -90,26 +67,18 @@ function mostrarFormularioActualizar(id, nombre, apellido, telefono, correo, fec
     
     // Actualizar los valores de los campos
     const nombreInput = form.querySelector('input[name="nombre"]');
-    const apellidoInput = form.querySelector('input[name="apellido"]');
-    const telefonoInput = form.querySelector('input[name="telefono"]');
-    const correoInput = form.querySelector('input[name="correo"]');
-    const fechaEntradaInput = form.querySelector('input[name="fecha_entrada"]');
-    const fechaSalidaInput = form.querySelector('input[name="fecha_salida"]');
-    const salarioInput = form.querySelector('input[name="salario"]');
+    const contactoInput = form.querySelector('input[name="contacto"]');
+    const direccionInput = form.querySelector('input[name="direccion"]');
     
     nombreInput.value = nombre;
-    apellidoInput.value = apellido;
-    telefonoInput.value = telefono;
-    correoInput.value = correo;
-    fechaEntradaInput.value = fecha_entrada;
-    fechaSalidaInput.value = fecha_salida;
-    salarioInput.value = salario;
+    contactoInput.value = contacto;
+    direccionInput.value = direccion;
     
     // Cambiar el texto del botón
     const btnSpan = submitBtn.querySelector('span');
     const btnSmall = submitBtn.querySelector('small');
     
-    btnSpan.textContent = 'Actualizar Empleado';
+    btnSpan.textContent = 'Actualizar Proveedor';
     btnSmall.textContent = 'Guardar cambios realizados';
     
     // Cambiar el color del botón para indicar modo edición
@@ -136,12 +105,12 @@ function mostrarFormularioActualizar(id, nombre, apellido, telefono, correo, fec
     form.scrollIntoView({ behavior: 'smooth' });
     
     // Mostrar mensaje de modo edición
-    mostrarAlerta('Modo edición activado. Los cambios se guardarán al hacer clic en "Actualizar Empleado".', 'success');
+    mostrarAlerta('Modo edición activado. Los cambios se guardarán al hacer clic en "Actualizar Proveedor".', 'success');
 }
 
 // Cancelar la edición y volver al modo crear
 function cancelarEdicion() {
-    const form = document.querySelector('.employee-form');
+    const form = document.querySelector('.provider-form');
     const submitBtn = document.querySelector('.submit-btn');
     
     // Restaurar la acción del formulario
@@ -155,27 +124,19 @@ function cancelarEdicion() {
     
     // Limpiar los campos
     const nombreInput = form.querySelector('input[name="nombre"]');
-    const apellidoInput = form.querySelector('input[name="apellido"]');
-    const telefonoInput = form.querySelector('input[name="telefono"]');
-    const correoInput = form.querySelector('input[name="correo"]');
-    const fechaEntradaInput = form.querySelector('input[name="fecha_entrada"]');
-    const fechaSalidaInput = form.querySelector('input[name="fecha_salida"]');
-    const salarioInput = form.querySelector('input[name="salario"]');
+    const contactoInput = form.querySelector('input[name="contacto"]');
+    const direccionInput = form.querySelector('input[name="direccion"]');
     
     nombreInput.value = '';
-    apellidoInput.value = '';
-    telefonoInput.value = '';
-    correoInput.value = '';
-    fechaEntradaInput.value = '';
-    fechaSalidaInput.value = '';
-    salarioInput.value = '';
+    contactoInput.value = '';
+    direccionInput.value = '';
     
     // Restaurar el texto del botón
     const btnSpan = submitBtn.querySelector('span');
     const btnSmall = submitBtn.querySelector('small');
     
-    btnSpan.textContent = 'Registrar Empleado';
-    btnSmall.textContent = 'Guardar información del empleado';
+    btnSpan.textContent = 'Registrar Proveedor';
+    btnSmall.textContent = 'Guardar información del proveedor';
     
     // Restaurar el color del botón
     submitBtn.style.background = 'linear-gradient(135deg, #e7b85c 0%, #f4d03f 100%)';
@@ -188,17 +149,10 @@ function cancelarEdicion() {
     }
     
     // Mostrar mensaje de cancelación
-    mostrarAlerta('Modo crear restaurado. Puedes crear un nuevo empleado.', 'success');
+    mostrarAlerta('Modo crear restaurado. Puedes crear un nuevo proveedor.', 'success');
 }
 
 // Inicializar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', function() {
-    // Establecer fecha mínima para campos de fecha
-    const fechaInputs = document.querySelectorAll('input[type="date"]');
-    const today = new Date().toISOString().split('T')[0];
-    fechaInputs.forEach(input => {
-        input.setAttribute('min', today);
-    });
-    
-    console.log('JavaScript de empleados cargado correctamente');
-});
+    console.log('JavaScript de proveedores cargado correctamente');
+}); 

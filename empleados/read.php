@@ -16,16 +16,18 @@ if (mysqli_num_rows($consulta_hotel) > 0)
                 <td>{$row['correo']}</td>
                 <td>{$row['fecha_entrada']}</td>
                 <td>{$row['fecha_salida']}</td>
-                <td>{$row['salario']}</td>
+                <td>\${$row['salario']}</td>
                 <td>
-                    <button onclick='eliminarEmpleado({$row['id']})'>Eliminar</button>
-                    <button onclick='mostrarFormularioActualizar({$row['id']}, \"{$row['nombre']}\", \"{$row['apellido']}\", \"{$row['telefono']}\", \"{$row['correo']}\", \"{$row['fecha_entrada']}\", \"{$row['fecha_salida']}\", \"{$row['salario']}\")'>Actualizar</button>
+                    <div class='btn-group'>
+                        <button class='edit-btn' onclick='mostrarFormularioActualizar({$row['id']}, \"{$row['nombre']}\", \"{$row['apellido']}\", \"{$row['telefono']}\", \"{$row['correo']}\", \"{$row['fecha_entrada']}\", \"{$row['fecha_salida']}\", \"{$row['salario']}\")'>Editar</button>
+                        <button class='delete-btn' onclick='eliminarEmpleado({$row['id']})'>Eliminar</button>
+                    </div>
                 </td>
             </tr>";
     }
 } 
 else 
 {
-    echo "<tr><td colspan='9'>No hay empleados registrados.</td></tr>";
+    echo "<tr><td colspan='8'>No hay empleados registrados.</td></tr>";
 }
 ?>
